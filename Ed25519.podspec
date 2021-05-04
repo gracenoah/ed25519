@@ -8,7 +8,9 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/AndrewBarba/ed25519.git', :tag => s.version.to_s }
 
   s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
-                            'APPLICATION_EXTENSION_API_ONLY' => 'YES' }
+                            'APPLICATION_EXTENSION_API_ONLY' => 'YES',
+                            'USE_HEADERMAP' => 'NO',
+                            'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/Headers/Public/libCEd25519"' }
 
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.12'
